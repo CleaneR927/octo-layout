@@ -1,0 +1,92 @@
+@import './mixins/checkbox.scss';
+@import './mixins/icon.scss';
+
+.task {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+  column-gap: 15px;
+
+  &.no-sub-tasks {
+    row-gap: 0;
+  }
+
+  &__checkbox {
+    @include custom-checkbox(var(--accent-color), var(--text-color), 24px);
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+  }
+
+  &__title--active {
+    text-decoration: line-through var(--accent-color, #05386b);
+  }
+
+  &__title--gap {
+    display: flex;
+    row-gap: 0;
+  }
+
+  &__button {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: flex;
+    gap: 5px;
+    justify-self: end;
+
+    &--delete,
+    &--add {
+      @include icon(var(--accent-color), 28px);
+    }
+
+    &--delete:active,
+    &--add:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__sub-tasks {
+    position: relative;
+    grid-column: 1/-1;
+    padding-inline: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__sub-tasks.has-sub-tasks::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color, #05386b);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .task {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__checkbox {
+      @include custom-checkbox(var(--accent-color), var(--text-color), 20px);
+    }
+
+    &__button {
+      &--delete,
+      &--add {
+        @include icon(var(--accent-color), 24px);
+      }
+    }
+
+    &__sub-tasks {
+      padding-inline: 20px;
+    }
+  }
+}
