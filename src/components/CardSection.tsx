@@ -1,4 +1,5 @@
 import React from 'react';
+import cardImage from '/src/assets/card-img.jpg';
 import '../styles/cardSection.scss';
 
 const CardSection: React.FC = () => {
@@ -17,11 +18,7 @@ const CardSection: React.FC = () => {
           </button>
         </div>
       </div>
-      <img
-        className="card-section__image"
-        alt="image alt"
-        src="/src/assets/card-img.jpg"
-      />
+      <img className="card-section__image" alt="image alt" src={cardImage} />
     </section>
   );
 };
