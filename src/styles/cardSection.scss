@@ -1,0 +1,132 @@
+@use '../variables.scss' as *;
+
+.card-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-block: clamp(5rem, -0.9615rem + 9.6154vw, 6.25rem);
+  padding-inline: 26px;
+  gap: clamp(1.875rem, -27.0385rem + 46.6346vw, 7.9375rem);
+  background-color: var(--accent-color, #010101);
+
+  &__container {
+    max-width: 555px;
+  }
+
+  &__title {
+    color: var(--accent-text-color, #00b6dd);
+    font-size: 62px;
+    line-height: 68px;
+    letter-spacing: 1.4px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 54px;
+      line-height: 60px;
+      letter-spacing: 1.2px;
+    }
+
+    @media screen and (max-width: 992px) {
+      font-size: 46px;
+      line-height: 48px;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__text {
+    margin-block: 22px 40px;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @media screen and (max-width: 992px) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+
+    @media screen and (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    background-color: var(--accent-text-color, #00b6dd);
+    border: 2px solid var(--accent-text-color, #00b6dd);
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+
+    &--secondary {
+      background-color: var(--accent-color, #010101);
+    }
+
+    @media screen and (max-width: 992px) {
+      padding: 8px 28px 10px;
+    }
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    max-width: 458px;
+    max-height: 380px;
+    object-fit: cover;
+
+    @media screen and (max-width: 1200px) {
+      max-height: 332px;
+    }
+
+    @media screen and (max-width: 992px) {
+      max-width: 320px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    padding-inline: clamp(3.9375rem, -0.375rem + 11.9792vw, 5.375rem);
+    padding-block: clamp(3.75rem, 1.875rem + 5.2083vw, 4.375rem);
+
+    &__container {
+      max-width: 595px;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__text {
+      text-align: center;
+      margin-block: 14px 30px;
+    }
+
+    &__button-container {
+      justify-content: center;
+    }
+
+    &__image {
+      max-width: 100%;
+      max-height: clamp(17.1875rem, 0.5rem + 46.3542vw, 22.75rem);
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 50px 15px;
+  }
+}

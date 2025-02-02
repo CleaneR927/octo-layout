@@ -1,13 +1,17 @@
 import React from 'react';
-import TaskList from './components/TaskList';
-import './styles/app.scss';
+import Header from './components/Header';
+import CardsList from './components/CardsList';
+import CardSection from './components/CardSection';
+import CardSwitcher from './components/CardSwitcher';
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <h1 className="app__title">Task Manager</h1>
-      <TaskList />
-    </div>
+    <>
+      <Header />
+      // <CardsList />
+      <CardSection />
+      <CardSwitcher />
+    </>
   );
 };
 

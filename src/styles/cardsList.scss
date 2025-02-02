@@ -1,0 +1,22 @@
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 30px;
+  margin-inline: auto;
+  margin-block: clamp(3.125rem, 0.2404rem + 8.0128vw, 6.25rem);
+  max-width: 1140px;
+
+  @media (max-width: 1200px) {
+    margin-inline: 26px;
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-inline: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  }
+}
